@@ -64,7 +64,7 @@ with tf.device('/gpu:0'):
     dwiTraining, featurePatchTraining, scales = load_training_patch(allDwiNames, allMaskNames, allFeatureNames,
                                                               featurenumbers, patch_size_high, patch_size_low,
                                                               upsample, norm_microstructure)
-
+    print("data_loaded")
     dwiTraining=asarray(dwiTraining)
     dwiTraining=moveaxis(dwiTraining,1,4)
     featurePatchTraining=asarray(featurePatchTraining)

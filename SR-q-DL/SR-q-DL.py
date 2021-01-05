@@ -35,7 +35,7 @@ with tf.device('/gpu:0'):
 
     tf_config = tf.compat.v1.ConfigProto()
     tf_config.gpu_options.allow_growth = True
-    session = tf.Session(config=tf_config)
+    session = tf.compat.v1.Session(config=tf_config)
 
     #### load images ####
     start = time.time()

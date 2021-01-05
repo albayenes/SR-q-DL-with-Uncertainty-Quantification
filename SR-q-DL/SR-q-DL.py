@@ -38,7 +38,7 @@ session = tf.Session(config=tf_config)
 
 #### load images ####
 start = time.time()
-print "Loading"    
+print("Loading")
 
 with open(dwinames) as f:
     allDwiNames = f.readlines()
@@ -71,7 +71,7 @@ regressor = espcn_srep(dwiTraining.shape[1:], featurenumbers, upsample, nDict, n
 epoch = 20
 #### fitting the model ####   
                 
-print "Fitting"    
+print("Fitting")
 hist = regressor.fit(dwiTraining, featurePatchTraining, batch_size=128, epochs=epoch, verbose=1, validation_split=0.1)
 print(hist.history)
 
@@ -81,10 +81,10 @@ with open(loss_txt_path,'wb') as f:
 
 end = time.time()
 regressor.save(os.path.join(directory,"model.h5"))
-print "Training took ", (end-start)
+print("Training took ", (end-start))
 
 #### Test #####
-print "Test Phase"    
+print("Test Phase")
 
 start = time.time()
 with open(testdwinames) as f:
@@ -97,9 +97,9 @@ allTestMaskNames = [x.strip('\n') for x in allTestMaskNames]
 
 #for iMask in range(len(allTestDwiNames)):
 for iMask in progressbar.progressbar(range(len(allTestDwiNames))):
-    print "Processing Subject: ", iMask
+    print("Processing Subject: ", iMask)
     #### load images ####
-    print "Loading"  
+    print("Loading")
     dwi_nii = nib.load(allTestDwiNames[iMask])
     dwi = dwi_nii.get_data()
     mask_nii = nib.load(allTestMaskNames[iMask])
@@ -110,7 +110,7 @@ for iMask in progressbar.progressbar(range(len(allTestDwiNames))):
     dwiTest = asarray(dwiTest)
     dwiTest = moveaxis(dwiTest, 1, 4)
                         
-    print "Computing"
+    print("Computing")
     featureList = regressor.predict(dwiTest)
     
     featureList = asarray(featureList)
@@ -129,5 +129,5 @@ for iMask in progressbar.progressbar(range(len(allTestDwiNames))):
         feature_nii.to_filename(feature_name)
     
 end = time.time()
-print "Test took ", (end-start)
+print("Test took ", (end-start))
     

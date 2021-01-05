@@ -21,6 +21,9 @@ from numpy import asarray
 import pickle
 from tensorflow.python.client import device_lib
 import tensorflow as tf
+
+print("Num GPUs Available: ", len(tf.config.experimental.list_physical_devices('GPU')))
+
 with tf.device('/gpu:0'):
     print(device_lib.list_local_devices())
 

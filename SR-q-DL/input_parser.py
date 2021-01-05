@@ -25,6 +25,9 @@ def input_parser_mesc(argv):
     directory = argv[9 + featurenumbers]
 
     norm_microstructure = False
+    nDict = None
+    nChannels1 = None
+    nChannels2 = None
     if len(argv) == 11 + featurenumbers:
         norm_microstructure = int(argv[10 + featurenumbers])
     if len(argv) == 14 + featurenumbers:

@@ -42,7 +42,6 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
         for i in range(mask.shape[0]):
             for j in range(mask.shape[1]):
                 for k in range(mask.shape[2]):
-                    print(mask[i,j,k].shape)
                     if mask[i,j,k] > 0:
                         nVox = nVox + 1 
     dwi = nib.load(allDwiNames[0]).get_data()                   

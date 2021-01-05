@@ -47,8 +47,8 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                         nVox = nVox + 1 
     dwi = nib.load(allDwiNames[0]).get_data()                   
     dwiTraining = np.zeros([nPatch, dwi.shape[3], patch_size_low, patch_size_low, patch_size_low])  
-    featurePatchTraining = np.zeros([nPatch, featurenumbers*np.power(upsample,3), patch_size_high//upsample,
-                                     patch_size_high//upsample, patch_size_high/upsample])
+    featurePatchTraining = np.zeros([nPatch, int(featurenumbers*np.power(upsample,3)), patch_size_high//upsample,
+                                     patch_size_high//upsample, patch_size_high//upsample])
     featureTraining = np.zeros([nVox, featurenumbers])
     
     # Normalize microstructure

@@ -1,5 +1,5 @@
-/okyanus/users/fozcelik/enes/originalTrainData_3d/786569/T1w/Diffusion/data.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/788674/T1w/Diffusion/data.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/788876/T1w/Diffusion/data.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/789373/T1w/Diffusion/data.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/792564/T1w/Diffusion/data.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/786569/T1w/Diffusion/nodif_brain_mask.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/788674/T1w/Diffusion/nodif_brain_mask.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/788876/T1w/Diffusion/nodif_brain_mask.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/789373/T1w/Diffusion/nodif_brain_mask.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/792564/T1w/Diffusion/nodif_brain_mask.nii.gz

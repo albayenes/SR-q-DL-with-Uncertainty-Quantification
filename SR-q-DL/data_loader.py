@@ -29,7 +29,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                     for j1 in range(0, patch_size_high, shift):
                         for k in range(0, mask.shape[2], patch_size_high):
                             for k1 in range(0, patch_size_high, shift):
-                                
+
                                 starti = min(mask.shape[0]-1, i+i1)
                                 endi = min(mask.shape[0], i+i1+patch_size_high)
                                 startj = min(mask.shape[1]-1, j+j1)
@@ -47,8 +47,8 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                         nVox = nVox + 1 
     dwi = nib.load(allDwiNames[0]).get_data()                   
     dwiTraining = np.zeros([nPatch, dwi.shape[3], patch_size_low, patch_size_low, patch_size_low])  
-    featurePatchTraining = np.zeros([nPatch, featurenumbers*np.power(upsample,3), patch_size_high/upsample, 
-                                     patch_size_high/upsample, patch_size_high/upsample])
+    featurePatchTraining = np.zeros([nPatch, featurenumbers*np.power(upsample,3), patch_size_high//upsample,
+                                     patch_size_high//upsample, patch_size_high/upsample])
     featureTraining = np.zeros([nVox, featurenumbers])
     
     # Normalize microstructure

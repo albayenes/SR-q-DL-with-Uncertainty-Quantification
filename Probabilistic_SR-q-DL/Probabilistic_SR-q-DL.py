@@ -93,10 +93,10 @@ for m in range(10):
     regressor.save(os.path.join(directory, "SRESPCN_ensemble_" + str(m) + ".h5"))
     
 end = time.time()
-print "Training took ", (end-start)
+print("Training took ", (end-start))
 
 #### Test ####
-print "Test Phase"    
+print("Test Phase")
 
 start = time.time()
 model_result = os.path.join(directory, "model_result")
@@ -119,9 +119,9 @@ allTestMaskNames = [x.strip('\n') for x in allTestMaskNames]
 
 #for iMask in range(len(allTestDwiNames)):
 for iMask in progressbar.progressbar(range(len(allTestDwiNames))):
-    print "Processing Subject: ", iMask
+    print("Processing Subject: ", iMask)
     #### load images ####
-    #print "Loading"  
+    #print("Loading")
     dwi_nii = nib.load(allTestDwiNames[iMask])
     dwi = dwi_nii.get_data()
     mask_nii = nib.load(allTestMaskNames[iMask])
@@ -132,7 +132,7 @@ for iMask in progressbar.progressbar(range(len(allTestDwiNames))):
     dwiTest = asarray(dwiTest)
     dwiTest = moveaxis(dwiTest, 1, 4)
                         
-    #print "Computing"
+    #print("Computing")
     rows = mask.shape[0]*2
     cols = mask.shape[1]*2
     slices = mask.shape[2]*2

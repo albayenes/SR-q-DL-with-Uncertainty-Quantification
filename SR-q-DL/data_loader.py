@@ -29,6 +29,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                     for j1 in range(0, patch_size_high, shift):
                         for k in range(0, mask.shape[2], patch_size_high):
                             for k1 in range(0, patch_size_high, shift):
+                                print("hello")
                                 starti = min(mask.shape[0]-1, i+i1)
                                 endi = min(mask.shape[0], i+i1+patch_size_high)
                                 startj = min(mask.shape[1]-1, j+j1)

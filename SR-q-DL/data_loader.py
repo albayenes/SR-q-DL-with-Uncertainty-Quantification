@@ -20,6 +20,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
     nVox = 0
     for iMask in range(len(allMaskNames)):
         print("Counting High-Res Patches for Subject", iMask)
+        print(allMaskNames[iMask])
         mask = nib.load(allMaskNames[iMask]).get_data()
         # number of patches
         for i in range(0, mask.shape[0], patch_size_high):

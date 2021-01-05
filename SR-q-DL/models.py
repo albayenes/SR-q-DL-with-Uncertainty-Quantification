@@ -60,5 +60,5 @@ def srqdl(input_shape, featurenumbers, upsample, nDict, nChannels1, nChannels2):
     
     regressor = Model(inputs=inputs,outputs=outputs)
     regressor.compile(optimizer=Adam(lr=0.0001), loss='mse')
-    print(regressor.summary()
+    print(regressor.summary())
     return regressor

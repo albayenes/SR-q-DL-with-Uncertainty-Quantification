@@ -142,8 +142,9 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                                                     for indx in range(upsample):
                                                         for indy in range(upsample):
                                                             for indz in range(upsample):
-                                                                if mask[(i_lr_center + ii)*upsample + indx, (j_lr_center + jj)*upsample + indy
-                                                                        , (k_lr_center + kk)*upsample + indz] > 0:
+                                                                if mask[int((i_lr_center + ii)*upsample + indx),
+                                                                        int((j_lr_center + jj)*upsample + indy),
+                                                                        int((k_lr_center + kk)*upsample + indz)] > 0:
                                                                     in_mask = True
                                                                     break
                                                     if in_mask:

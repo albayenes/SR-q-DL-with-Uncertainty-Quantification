@@ -1,0 +1,7 @@
+.idea/
+results/
+__pycache__/
+.pytest*
+sample_data*
+training_results
+

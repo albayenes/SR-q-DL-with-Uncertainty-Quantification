@@ -17,14 +17,14 @@ import pickle
 def srqdl(input_shape, featurenumbers, upsample, nDict, nChannels1, nChannels2):
 
     nLayers1 = 8
-    print "input_shape:", input_shape
+    print("input_shape:", input_shape)
     inputs = Input(shape=input_shape)
-    print "inputs:", inputs.shape
+    print("inputs:", inputs.shape)
     W = Sequential() 
     W.add(Conv3D(filters=nDict, kernel_size=(1, 1, 1), activation='relu', input_shape=input_shape))
     
     a = W(inputs)
-    print "a:", a.shape
+    print("a:", a.shape)
 
     TS = Sequential()
     TS_input_shape = list(input_shape)
@@ -56,9 +56,9 @@ def srqdl(input_shape, featurenumbers, upsample, nDict, nChannels1, nChannels2):
     outputs = H(x)
     
     #### fitting the model ####                   
-    print "Fitting"    
+    print("Fitting")
     
     regressor = Model(inputs=inputs,outputs=outputs)
     regressor.compile(optimizer=Adam(lr=0.0001), loss='mse')
-    print regressor.summary()
+    print(regressor.summary()
     return regressor

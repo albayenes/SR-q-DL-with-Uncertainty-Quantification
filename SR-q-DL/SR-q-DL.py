@@ -21,6 +21,7 @@ from numpy import asarray
 import pickle
 from tensorflow.python.client import device_lib
 import tensorflow as tf
+tf.device('/gpu')
 print(device_lib.list_local_devices())
 
 ####     

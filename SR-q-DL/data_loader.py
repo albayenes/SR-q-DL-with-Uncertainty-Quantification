@@ -10,7 +10,7 @@ import numpy as np
 ####
 def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbers, 
                   patch_size_high, patch_size_low, upsample, norm_microstructure, shift=None):
-    print "norm_microstructure= ", norm_microstructure
+    print("norm_microstructure= ", norm_microstructure)
     #### counting ####
     if shift == None:
         shift = patch_size_high
@@ -19,7 +19,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
     nPatch = 0
     nVox = 0
     for iMask in range(len(allMaskNames)):
-        print "Counting High-Res Patches for Subject", iMask
+        print("Counting High-Res Patches for Subject", iMask)
         mask = nib.load(allMaskNames[iMask]).get_data()
         # number of patches
         for i in range(0, mask.shape[0], patch_size_high):
@@ -36,7 +36,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                                 endk = min(mask.shape[2], k+k1+patch_size_high)
                                 if np.sum(mask[starti:endi, startj:endj, startk:endk]) > 0.0*np.power(patch_size_high,3):
                                     nPatch = nPatch + 1
-        print "Counting High-Res Voxels for Subject", iMask
+        print("Counting High-Res Voxels for Subject", iMask)
         # number of voxels, used if normalizing microstructure
         for i in range(mask.shape[0]):
             for j in range(mask.shape[1]):
@@ -52,11 +52,11 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
     # Normalize microstructure
     
     if norm_microstructure == 1:
-        print "Normalizing Microstructure"
+        print("Normalizing Microstructure")
         nVox = 0
             
         for iMask in range(len(allDwiNames)):
-            print "Examining High-Res Voxels for Subject:", iMask
+            print("Examining High-Res Voxels for Subject:", iMask)
             mask = nib.load(allMaskNames[iMask]).get_data()
             feature = []
             for feature_index in range(featurenumbers):
@@ -73,15 +73,15 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
         scales = np.log10(means)
         scalesint = np.floor(scales)
         scales = np.power(10,scalesint)
-        print "scales:", scalesint, scales
+        print("scales:", scalesint, scales)
     else:
         scales = np.ones(featurenumbers)
-        print "scales:", scales
+        print("scales:", scales)
     
     # Setting data
     nPatch = 0
     for iMask in range(len(allDwiNames)):
-        print "Setting Patch List for Subject:", iMask
+        print("Setting Patch List for Subject:", iMask)
         dwi_nii = nib.load(allDwiNames[iMask])
         dwi = dwi_nii.get_data()
         mask = nib.load(allMaskNames[iMask]).get_data()
@@ -154,7 +154,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
 
 ####    
 def load_test_patch(dwi, mask, patch_size_high, patch_size_low, upsample):
-    #print "Counting High-Res Patches"
+    #print("Counting High-Res Patches")
     nPatch = 0
     
     for i in range(0, mask.shape[0]*upsample, patch_size_high):
@@ -169,7 +169,7 @@ def load_test_patch(dwi, mask, patch_size_high, patch_size_low, upsample):
     patchCornerList = np.zeros([nPatch, 3], int)
     dwiTest = np.zeros([nPatch, dwi.shape[3], patch_size_low, patch_size_low, patch_size_low])   
 
-    #print "Setting Voxels"
+    #print("Setting Voxels")
     nPatch = 0
     for i in range(0, dwi.shape[0]*upsample, patch_size_high):
         for j in range(0, dwi.shape[1]*upsample, patch_size_high):

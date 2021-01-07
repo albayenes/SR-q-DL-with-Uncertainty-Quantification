@@ -30,7 +30,7 @@ with tf.device('/gpu:0'):
     ####
     dwinames, masknames, featurenumbers, featurenames, \
     testdwinames, testmasknames, patch_size_low, patch_size_high, \
-    upsample, directory, norm_microstructure, nDict, nChannels1, nChannels2= input_parser_mesc(sys.argv)
+    upsample, directory, norm_microstructure, nDict, nChannels1, nChannels2 = input_parser_mesc(sys.argv)
 
     ####
     if os.path.exists(directory) == False:

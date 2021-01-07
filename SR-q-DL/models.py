@@ -20,6 +20,7 @@ def srqdl(input_shape, featurenumbers, upsample, nDict, nChannels1, nChannels2):
     print("input_shape:", input_shape)
     inputs = Input(shape=input_shape)
     print("inputs:", inputs.shape)
+    print("nDict : ", nDict)
     W = Sequential() 
     W.add(Conv3D(filters=nDict, kernel_size=(1, 1, 1), activation='relu', input_shape=input_shape))
     
@@ -44,9 +45,8 @@ def srqdl(input_shape, featurenumbers, upsample, nDict, nChannels1, nChannels2):
         b = TS(c)
     y = add([a,b])
     x = ThresholdedReLU(theta = ReLUThres)(y)
-    
-    H = Sequential() 
-    H = Sequential() 
+
+    H = Sequential()
     H.add(Conv3D(filters=nChannels1, kernel_size=(3, 3, 3), activation='relu', input_shape=TS_input_shape))
     H.add(Dropout(0.1))
     H.add(Conv3D(filters=nChannels2, kernel_size=(1, 1, 1), activation='relu'))

@@ -12,6 +12,8 @@ def input_parser_mesc(argv):
     dwinames = argv[1] # low resolution diffusion signals
     masknames = argv[2] # high resolution mask
     featurenumbers = int(argv[3]) # high resolution microstructure maps
+    print("featurenumbers ", featurenumbers)
+    print("len(argv) : ", len(argv))
     featurenames = []
     for feature_index in range(featurenumbers):
         featurenames.append(argv[4 + feature_index])

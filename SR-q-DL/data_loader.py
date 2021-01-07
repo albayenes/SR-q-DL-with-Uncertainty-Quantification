@@ -150,7 +150,7 @@ def load_training_patch(allDwiNames, allMaskNames, allFeatureNames, featurenumbe
                                                     if in_mask:
                                                         dwiTraining[nPatch, :, -(-patch_size_low//2 + 1) + ii, 
                                                                      -(-patch_size_low//2 + 1) + jj, -(-patch_size_low//2 + 1) + kk] \
-                                                        = dwi[int(i_lr_center+ii), int(j_lr_center+jj), int(k_lr_center+kk), :]
+                                                        = dwi[int(i_lr_center+ii),  int(j_lr_center+jj), int(k_lr_center+kk), :]
                                     nPatch = nPatch + 1
                         
     return dwiTraining, featurePatchTraining, scales

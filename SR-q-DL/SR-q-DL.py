@@ -70,7 +70,7 @@ with tf.device('/gpu:0'):
     featurePatchTraining=asarray(featurePatchTraining)
     featurePatchTraining=moveaxis(featurePatchTraining,1,4)
 
-    regressor = espcn_srep(dwiTraining.shape[1:], featurenumbers, upsample, nDict, nChannels1, nChannels2)
+    regressor = srqdl(dwiTraining.shape[1:], featurenumbers, upsample, nDict, nChannels1, nChannels2)
 
     epoch = 20
     #### fitting the model ####

@@ -32,7 +32,7 @@ def input_parser_mesc(argv):
     nChannels2 = None
     if len(argv) == 11 + featurenumbers:
         norm_microstructure = int(argv[10 + featurenumbers])
-    if len(argv) == 14 + featurenumbers:
+    if len(argv) == 13 + featurenumbers:
         nDict = int(argv[11 + featurenumbers])
         nChannels1 = int(argv[12 + featurenumbers])
         nChannels2 = int(argv[13 + featurenumbers])

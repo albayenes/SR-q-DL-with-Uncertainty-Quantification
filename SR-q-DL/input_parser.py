@@ -33,9 +33,9 @@ def input_parser_mesc(argv):
     if len(argv) == 11 + featurenumbers:
         norm_microstructure = int(argv[10 + featurenumbers])
     if len(argv) == 13 + featurenumbers:
-        nDict = int(argv[11 + featurenumbers])
-        nChannels1 = int(argv[12 + featurenumbers])
-        nChannels2 = int(argv[13 + featurenumbers])
+        nDict = int(argv[10 + featurenumbers])
+        nChannels1 = int(argv[11 + featurenumbers])
+        nChannels2 = int(argv[12 + featurenumbers])
 
     return dwinames, masknames, featurenumbers, featurenames, testdwinames, testmasknames, patch_size_low, \
            patch_size_high, upsample, directory, norm_microstructure, nDict, nChannels1, nChannels2

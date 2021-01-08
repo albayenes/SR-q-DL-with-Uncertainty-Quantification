@@ -75,9 +75,10 @@ with tf.device('/gpu:0'):
     epoch = 20
     #### fitting the model ####
 
-    print("Fitting")
+    print("Regressor Fitting...")
     hist = regressor.fit(dwiTraining, featurePatchTraining, batch_size=128, epochs=epoch, verbose=1, validation_split=0.1)
     print(hist.history)
+    print("Regressor Fitting Donw")
 
     loss_txt_path=os.path.join(directory,'history.pkl')
     with open(loss_txt_path,'wb') as f:

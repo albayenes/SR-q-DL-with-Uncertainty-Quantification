@@ -106,7 +106,7 @@ with tf.device('/gpu:0'):
     print(allTestMaskNames)
 
     #for iMask in range(len(allTestDwiNames)):
-    for iMask in progressbar.progressbar(range(len(allTestDwiNames))):
+    for iMask in range(len(allTestDwiNames)):
         print("Processing Subject: ", iMask)
         #### load images ####
         print("Loading")

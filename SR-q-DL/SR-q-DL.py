@@ -78,7 +78,7 @@ with tf.device('/gpu:0'):
     print("Regressor Fitting...")
     print(dwiTraining.shape)
     print(featurePatchTraining.shape)
-    hist = regressor.fit(dwiTraining[0:50000, ...], featurePatchTraining[0:50000, ...], batch_size=64, epochs=epoch, verbose=4, validation_split=0.1)
+    hist = regressor.fit(dwiTraining[0:500000, ...], featurePatchTraining[0:500000, ...], batch_size=128, epochs=epoch, verbose=4, validation_split=0.1)
     print(hist.history)
     print("Regressor Fitting Donw")
 

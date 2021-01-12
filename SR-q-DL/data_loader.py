@@ -194,10 +194,10 @@ def load_test_patch(dwi, mask, patch_size_high, patch_size_low, upsample):
                                             -(-patch_size_low//2 + 1) + jj, -(-patch_size_low//2 + 1) + kk] = 0 
 
                                 if i_lr_center + ii >= 0 and i_lr_center + ii < dwi.shape[0] and j_lr_center + jj >= 0 and j_lr_center + jj < dwi.shape[1] \
-                                and k_lr_center + kk >= 0 and k_lr_center + kk < dwi.shape[2] and mask[i_lr_center + ii, j_lr_center + jj, k_lr_center + kk]: 
-                                    dwiTest[nPatch, :, -(-patch_size_low//2 + 1) + ii, 
-                                            -(-patch_size_low//2 + 1) + jj, -(-patch_size_low//2 + 1) + kk]\
-                                    = dwi[i_lr_center+ii, j_lr_center+jj, k_lr_center+kk, :]
+                                and k_lr_center + kk >= 0 and k_lr_center + kk < dwi.shape[2] and mask[int(i_lr_center + ii), int(j_lr_center + jj), int(k_lr_center + kk)]:
+                                    dwiTest[nPatch, :, int(-(-patch_size_low//2 + 1) + ii),
+                                            int(-(-patch_size_low//2 + 1) + jj), int(-(-patch_size_low//2 + 1) + kk)]\
+                                    = dwi[int(i_lr_center+ii), int(j_lr_center+jj), int(k_lr_center+kk), :]
                     nPatch = nPatch + 1
                     
     return dwiTest, patchCornerList

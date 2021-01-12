@@ -111,9 +111,9 @@ with tf.device('/gpu:0'):
         #### load images ####
         print("Loading")
         dwi_nii = nib.load(allTestDwiNames[iMask])
-        dwi = dwi_nii.get_data()
+        dwi = dwi_nii.get_fdata()
         mask_nii = nib.load(allTestMaskNames[iMask])
-        mask = mask_nii.get_data()
+        mask = mask_nii.get_fdata()
 
         dwiTest, patchCornerList = load_test_patch(dwi, mask, patch_size_high, patch_size_low, upsample)
 

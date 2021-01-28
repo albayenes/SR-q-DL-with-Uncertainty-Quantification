@@ -1,5 +1,5 @@
-/okyanus/users/fozcelik/enes/originalTrainData_3d/786569/T1w/Diffusion/data_LR_2x_1000_18dirs_3000_18dirs.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/788674/T1w/Diffusion/data_LR_2x_1000_18dirs_3000_18dirs.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/788876/T1w/Diffusion/data_LR_2x_1000_18dirs_3000_18dirs.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/789373/T1w/Diffusion/data_LR_2x_1000_18dirs_3000_18dirs.nii.gz
-/okyanus/users/fozcelik/enes/originalTrainData_3d/792564/T1w/Diffusion/data_LR_2x_1000_18dirs_3000_18dirs.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/786569/T1w/Diffusion/data_cropped_LR_2x_1000_18dirs_3000_18dirs.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/788674/T1w/Diffusion/data_cropped_LR_2x_1000_18dirs_3000_18dirs.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/788876/T1w/Diffusion/data_cropped_LR_2x_1000_18dirs_3000_18dirs.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/789373/T1w/Diffusion/data_cropped_LR_2x_1000_18dirs_3000_18dirs.nii.gz
+/okyanus/users/fozcelik/enes/originalTrainData_3d/792564/T1w/Diffusion/data_cropped_LR_2x_1000_18dirs_3000_18dirs.nii.gz
